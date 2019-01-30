@@ -7,13 +7,23 @@ class SearchBar extends React.Component {
             term: ''
         }
     }
+    onInputChange = (event) =>{
+        this.setState({term: event.target.value});
+    }
+    onFormSubmit = (event) =>{
+        event.preventDefault();
+        this.props.onFormSubmit(this.state.term);
+    }
     render(){
         return (
-            <div class="ui action input">
-                <form>
-                    <input type="text" value="http://ww.short.url/c0opq">
-                    <button class="ui teal right labeled icon button">
-                        <i class="copy icon"></i>
+            <div className="ui action input">
+                <form onSubmit={this.onFormSubmit} className="ui form">
+                    <input type="text" 
+                    value={this.state.term}
+                    onChange={this.onInputChange}
+                    />
+                    <button className="ui teal right labeled icon button">
+                        <i className="search icon"></i>
                         Search Videos
                     </button>
                 </form>
@@ -21,3 +31,5 @@ class SearchBar extends React.Component {
         );
     }
 }
+
+export default SearchBar;
