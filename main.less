@@ -1,0 +1,62 @@
+//Variables
+
+//Colors
+
+//Mixin
+
+//Measurements
+
+@pairRowPad: 42px;
+@oddRowPad: 41px;
+@smPad: 38px;
+@half: 445px;
+@minHalf: 348px;
+@third: 284px;
+@fourth: 202px;
+@fifth: 154px;
+@sixth: 124px;
+
+
+//CSS Grid System
+
+.outer-container{ width: 100%;}
+
+.inner-container{ width: 934px; margin: 0 auto; }
+
+//.half{ display: grid; grid-template-columns: @half @half; grid-column-gap: @pairRowPad }
+.half{ display:grid; grid-template-columns: repeat(auto-fill, minmax(348px, 1fr));}
+
+.thirds{ display: grid; grid-template-columns: @third @third @third ; grid-column-gap: @oddRowPad }
+
+.fourths{ display: grid; grid-template-columns: @fourth @fourth @fourth @fourth; grid-column-gap: @pairRowPad }
+
+.fifths{ display: grid; grid-template-columns: @fifth @fifth @fifth @fifth @fifth; grid-column-gap: @oddRowPad }
+
+.sixths{ display: grid; grid-template-columns: @sixth @sixth @sixth @sixth @sixth @sixth; grid-column-gap: @smPad }
+
+//Media Queries
+
+// Large desktop 
+@media (min-width: 1200px) { 
+
+ }
+
+// Portrait tablet to landscape and desktop 
+@media (min-width: 768px) and (max-width: 979px) {
+
+}
+
+// Landscape phone to portrait tablet
+@media (max-width: 767px) {
+
+    
+}
+
+// Landscape phones and down 
+@media (max-width: 480px) { 
+    //.half{ display:grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));}
+ }
+
+
+
+
